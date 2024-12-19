@@ -1,0 +1,46 @@
+<div class="w-50 mx-auto border write-container container">
+  <div class="ql-editor pb-0">
+    @for (dialogue of dialogues; track $index) {
+    <div
+      [innerHTML]="dialogue.html"
+      [ngClass]="{ 'assistant-dialogue': dialogue.role === 'assistant' }"
+    ></div>
+    }
+  </div>
+  <form [formGroup]="form">
+    <quill-editor
+      class="quill-editor"
+      placeholder="Write..."
+      [modules]="quillConfig"
+      format="json"
+      [theme]="'bubble'"
+      [styles]="editorStyles"
+      (onContentChanged)="onContentChanged($event)"
+      (onEditorCreated)="onEditorCreated($event)"
+      [formControl]="form.controls.jsonContent"
+    ></quill-editor>
+  </form>
+  <div class="d-flex">
+    <button mat-icon-button class="ms-auto">
+      <mat-icon>autorenew</mat-icon>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>bolt</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>spellcheck</mat-icon>
+        <span>Proofread</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>prompt_suggestion</mat-icon>
+        <span>Suggest idea</span>
+      </button>
+    </mat-menu>
+  </div>
+  <mat-divider style="border-top-color: rgb(240, 240, 240)"></mat-divider>
+  <div class="d-flex m-3">
+    <button mat-flat-button (click)="handleDeepDiveClick()">Deep Dive</button>
+    <button mat-stroked-button class="ms-auto">Save</button>
+  </div>
+</div>

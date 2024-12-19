@@ -1,0 +1,9 @@
+<div class="container bg-white border p-5">
+  <h4 class="title">
+    {{ entry.title }}
+  </h4>
+  <p class="text-secondary">
+    {{ entry.date | date : "EEEE, MMMM d, y @ h:mm:ss a" }}
+  </p>
+  <div [innerHTML]="entry.content"></div>
+</div>

@@ -1,0 +1,39 @@
+<div class="d-flex">
+  <div class="w-25">
+    <mat-card>
+      <mat-calendar
+        [dateClass]="dateClass"
+        [dateFilter]="dateFilter"
+      ></mat-calendar>
+    </mat-card>
+  </div>
+  <div>
+    <div class="d-flex justify-content-end">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Streak</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-icon
+            class="streak-icon"
+            aria-hidden="false"
+            fontIcon="local_fire_department"
+          ></mat-icon>
+          <b>6 days</b>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Entries</mat-card-title>
+        </mat-card-header>
+        <mat-card-content> <b>7</b> </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Words</mat-card-title>
+        </mat-card-header>
+        <mat-card-content> <b>100</b> </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

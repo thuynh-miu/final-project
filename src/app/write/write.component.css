@@ -1,0 +1,13 @@
+.quill-editor {
+    width: 100%;
+    min-height: 300px;
+}
+
+.write-container {
+    font-size: 24px;
+    background-color: white;
+}
+
+.assistant-dialogue {
+    color: #2b6cb0
+}
